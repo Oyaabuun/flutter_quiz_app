@@ -31,7 +31,9 @@ class StartScreen extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           OutlinedButton.icon( //adding button . the .icon here is a constructor of default class icon 
-            onPressed: () {}, //adding click to button with empty function
+            onPressed: () {
+              
+            }, //adding click to button with empty function
             style: OutlinedButton.styleFrom( //making button text white
               foregroundColor: Colors.white
             ),
