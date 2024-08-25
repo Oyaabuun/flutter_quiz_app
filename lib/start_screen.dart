@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(void Function() startQuiz,{super.key});
+  //Funtion() is a datatype in dart , we are passting a void fucntion argument here
+  // which will activate the button to switchScreen when presed, this parameter is invoked when void setState is activated in quiz.dart file and 
+  //user wants to change the screen 
   @override
   Widget build(context) {
     return Center(
@@ -32,7 +35,7 @@ class StartScreen extends StatelessWidget {
           const SizedBox(height: 30),
           OutlinedButton.icon( //adding button . the .icon here is a constructor of default class icon 
             onPressed: () {
-              
+
             }, //adding click to button with empty function
             style: OutlinedButton.styleFrom( //making button text white
               foregroundColor: Colors.white
