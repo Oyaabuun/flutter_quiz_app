@@ -11,8 +11,19 @@ class Quiz extends StatefulWidget {
 } 
 }
 class _QuizState extends State<Quiz>{
-  Widget activeScreen = const StartScreen(); //we are storing a widget in a avariable caz in dart widgets are objects and objects can be stored 
-
+  Widget? activeScreen; //this means that active screen can also be null 
+  
+   
+ // Widget activeScreen =  StartScreen(switchScreen);//switchScreen here is a pointer,if we pass the switchScreen() function itself then it would change the screen immediately 
+   //we are storing a widget in a avariable caz in dart widgets are objects and objects can be stored 
+//we have to connect the switchsScreen to StartScreen so that when button is pressed on StartScreen it actually works)
+//so we are adding a pointer of switchScreen fucntion to StartScreen 
+@override
+  void initState() { //this will execute before the build methods runs, so no need to write the setstate fucntion here becasue anyway it will run later.
+    
+    activeScreen=StartScreen(switchScreen);
+    super.initState();
+  }
   void switchScreen(){ //remeber the empty() paraenthesis function its for switch
     setState((){  //empty paraenthesis is called anonymous fucntion
       activeScreen = const QuestionsScreen();
